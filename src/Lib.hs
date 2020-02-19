@@ -32,6 +32,16 @@ concatTokens :: [String] -> String
 concatTokens [] = []
 concatTokens (a:as) = tokenToString (splitTokens(a)) ++ concatTokens as
 
+splitTokens :: String -> Token
+splitTokens "int" = TOKEN_INT
+splitTokens "main" = TOKEN_MAIN
+splitTokens "{" = TOKEN_OPENBRACES
+splitTokens "}" = TOKEN_CLOSINGBRACES
+splitTokens "(" = TOKEN_OPENPAREN
+splitTokens ")" = TOKEN_CLOSINGPAREN
+splitTokens "return" = TOKEN_RETURN
+splitTokens ";" = TOKEN_SEMICOLON
+splitTokens _ = TOKEN_OTHER
 
 tokenToString :: Token -> String
 tokenToString b
