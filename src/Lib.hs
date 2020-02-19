@@ -20,3 +20,6 @@ die     = exitWith (ExitFailure 1)
 data Token = TOKEN_MAIN | TOKEN_INT | TOKEN_OTHER | TOKEN_OPENBRACES | TOKEN_CLOSINGBRACES | TOKEN_OPENPAREN | TOKEN_CLOSINGPAREN | TOKEN_RETURN | TOKEN_SEMICOLON
     deriving (Eq)
 
+parseAll :: String -> String
+parseAll [] = []
+parseAll a = concatTokens (prepare(words (a)))
