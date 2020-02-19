@@ -23,3 +23,8 @@ data Token = TOKEN_MAIN | TOKEN_INT | TOKEN_OTHER | TOKEN_OPENBRACES | TOKEN_CLO
 parseAll :: String -> String
 parseAll [] = []
 parseAll a = concatTokens (prepare(words (a)))
+
+prepare :: [String] -> [String]
+prepare [] = []
+prepare (a:as) = [a, prepare as]
+
