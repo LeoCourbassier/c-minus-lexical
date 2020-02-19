@@ -28,3 +28,7 @@ prepare :: [String] -> [String]
 prepare [] = []
 prepare (a:as) = [a, prepare as]
 
+concatTokens :: [String] -> String
+concatTokens [] = []
+concatTokens (a:as) = tokenToString (splitTokens(a)) ++ concatTokens as
+
